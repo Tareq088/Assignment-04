@@ -1,0 +1,74 @@
+function calculateVAT(price){
+    let vatRate = 0.075;
+    if( price <0 || typeof(price) !== "number"){
+        let result = "Invalid";
+        return result;
+    }
+    let totalVat = price*0.075;
+    let result = totalVat + " taka";
+    return result ;
+}
+
+                // assignment 2
+function  validContact( contact ) {
+    let elevevDigit = /^\d{11}$/.test(contact);
+    if(typeof(contact) !== "string"){
+        return "Invalid"
+    }
+    else if(elevevDigit && contact[0] == 0 && contact[1] == 1 && !contact.includes(" ")){
+        return true;
+    }
+    return false  
+}
+
+                     // 3
+function  willSuccess( marks ) {
+let passArray = [];
+let failArray = [];
+if(Array.isArray(marks)){
+    for( let mark of marks){
+        if( mark >= 50){
+            passArray.push("Pass")
+        }
+        else{
+            failArray.push("Fail");
+        }
+    }
+    if (passArray.length > failArray.length){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+return "Invalid"
+}
+
+                                                            // assignment 04
+function  validProposal( person1 , person2 ) {
+    let ageDifference = Math.abs(person1.age - person2.age);
+    if(typeof(person1) === "object" && typeof(person2) === "object" && !Array.isArray(person1) && !Array.isArray(person2)){
+        if(person1.gender !== person2.gender && ageDifference <= 7){
+            return true;
+        }
+        return false;
+    }
+    return "Invalid";   
+}
+
+                                // assignment 05
+function  calculateSleepTime( times ) {
+    let sleepingTime = 0;
+    for (let time of times){
+        if(typeof(time) === "number"){
+            sleepingTime += time;
+        }
+        else{
+            return "Invalid"
+        }
+    }
+    let hour = Math.floor(sleepingTime / 3600);
+    let minute = Math.floor((sleepingTime % 3600)/60);
+    let second = Math.floor((sleepingTime % 3600)%60);
+    return { hour, minute, second };
+}
