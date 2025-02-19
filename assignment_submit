@@ -8,20 +8,19 @@ function calculateVAT(price){
     let result = totalVat + " taka";
     return result ;
 }
-
-                // assignment 2
+           
 function  validContact( contact ) {
-    let elevevDigit = /^\d{11}$/.test(contact);
+    let elevevDigit = contact.length;
     if(typeof(contact) !== "string"){
-        return "Invalid"
+        return "Invalid";
     }
-    else if(elevevDigit && contact[0] == 0 && contact[1] == 1 && !contact.includes(" ")){
+    else if(elevevDigit == 11 && contact[0] == 0 && contact[1] == 1 && !contact.includes(" ")){
         return true;
     }
     return false  
 }
 
-                     // 3
+                    
 function  willSuccess( marks ) {
 let passArray = [];
 let failArray = [];
@@ -44,7 +43,7 @@ if(Array.isArray(marks)){
 return "Invalid"
 }
 
-                                                            // assignment 04
+                                                        
 function  validProposal( person1 , person2 ) {
     let ageDifference = Math.abs(person1.age - person2.age);
     if(typeof(person1) === "object" && typeof(person2) === "object" && !Array.isArray(person1) && !Array.isArray(person2)){
@@ -56,7 +55,7 @@ function  validProposal( person1 , person2 ) {
     return "Invalid";   
 }
 
-                                // assignment 05
+                              
 function  calculateSleepTime( times ) {
     let sleepingTime = 0;
     for (let time of times){

@@ -1,14 +1,16 @@
 function  validContact( contact ) {
-    let elevevDigit = /^\d{11}$/.test(contact);
+    // let elevevDigit = /^\d{11}$/.test(contact);
     // console.log(elevevDigit)
     // console.log(contact[0])
     // console.log(contact[1])
     // console.log(!contact.includes(" "))
     // console.log(typeof(contact))
+    let elevevDigit =contact.length;
+    console.log(elevevDigit)
     if(typeof(contact) !== "string"){
-        return "Invalid";
+        return "Invalid"; 
     }
-    else if(elevevDigit && contact[0] == 0 && contact[1] == 1 && !contact.includes(" ")){
+    else if(elevevDigit == 11 && contact[0] == 0 && contact[1] == 1 && !contact.includes(" ")){
         // console.log("true")
         return true;
     }
